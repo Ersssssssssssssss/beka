@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Animation</title>
+    <style>
+        /* Негізгі стильдер */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Хидер меню */
+.header-menu {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.header-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.header-menu li {
+    position: relative;
+    margin-right: 20px;
+}
+
+.header-menu a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
+.header-menu a:hover {
+    background: #555;
+}
+
+/* Ішкі мәзір */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: #444;
+    list-style: none;
+    padding: 10px;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+.submenu li a {
+    padding: 5px 10px;
+    color: #fff;
+    display: block;
+}
+
+/* Жанынан ашылатын мәзір */
+.menu-toggle {
+    position: relative;
+}
+
+.menu-label {
+    font-size: 20px;
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#menu-checkbox {
+    display: none;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #333;
+    color: white;
+    transition: left 0.3s ease;
+    padding: 20px;
+}
+
+#menu-checkbox:checked ~ .side-menu {
+    left: 0;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+}
+
+.side-menu li a:hover {
+    background: #555;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="header-menu">
+            <ul>
+                <li><a href="#">Басты бет</a></li>
+                <li class="dropdown">
+                    <a href="#">Қызметтер</a>
+                    <ul class="submenu">
+                        <li><a href="#">Веб-дизайн</a></li>
+                        <li><a href="#">Бағдарламалау</a></li>
+                        <li><a href="#">Маркетинг</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Байланыс</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Жанынан ашылатын мәзір -->
+    <div class="menu-toggle">
+        <input type="checkbox" id="menu-checkbox">
+        <label for="menu-checkbox" class="menu-label">☰ Мәзір</label>
+        <div class="side-menu">
+            <ul>
+                <li><a href="#">Сілтеме 1</a></li>
+                <li><a href="#">Сілтеме 2</a></li>
+                <li><a href="#">Сілтеме 3</a></li>
+                <li><a href="#">Сілтеме 4</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
